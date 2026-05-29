@@ -86,14 +86,21 @@ def get_switch_data():
                     licensing_version = "N/A"
                     if is_9k_or_above:
                         try:
-                            lic_output = net_connect.send_command("show version | include License Level")
-                            lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                            # Try Catalyst 9000 style format first
+                            lic_output = net_connect.send_command("show version | include network-")
+                            lic_match = re.search(r"(network-(?:advantage|essentials))", lic_output, re.IGNORECASE)
                             if lic_match:
                                 licensing_version = lic_match.group(1).strip()
-                            elif lic_output.strip():
-                                licensing_version = lic_output.strip().split('\n')[0]
                             else:
-                                licensing_version = "Unknown"
+                                # Fallback to the traditional formatting
+                                lic_output = net_connect.send_command("show version | include License Level")
+                                lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                                if lic_match:
+                                    licensing_version = lic_match.group(1).strip()
+                                elif lic_output.strip():
+                                    licensing_version = lic_output.strip().split('\n')[0]
+                                else:
+                                    licensing_version = "Unknown"
                         except Exception as e:
                             print(f"  [!] Could not fetch licensing for {ip}: {e}")
 
@@ -245,12 +252,19 @@ def update_inventory(filename="switch_inventory.json"):
 
                     if is_9k_or_above:
                         try:
-                            lic_output = net_connect.send_command("show version | include License Level")
-                            lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                            lic_output = net_connect.send_command("show version | include network-")
+                            lic_match = re.search(r"(network-(?:advantage|essentials))", lic_output, re.IGNORECASE)
                             if lic_match:
                                 device['licensing_version'] = lic_match.group(1).strip()
-                            elif lic_output.strip():
-                                device['licensing_version'] = lic_output.strip().split('\n')[0]
+                            else:
+                                lic_output = net_connect.send_command("show version | include License Level")
+                                lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                                if lic_match:
+                                    device['licensing_version'] = lic_match.group(1).strip()
+                                elif lic_output.strip():
+                                    device['licensing_version'] = lic_output.strip().split('\n')[0]
+                                else:
+                                    device['licensing_version'] = "Unknown"
                         except Exception as e:
                             print(f"  [!] Could not fetch licensing for {ip}: {e}")
                 
