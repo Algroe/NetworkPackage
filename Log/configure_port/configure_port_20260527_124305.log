@@ -1,0 +1,372 @@
+2026-05-27 12:43:09,698 - INFO - Starting port configuration script.
+2026-05-27 12:43:21,290 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:43:24,504 - INFO - Authentication (password) successful!
+2026-05-27 12:43:25,919 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:43:28,064 - INFO - Authentication (password) successful!
+2026-05-27 12:43:29,304 - INFO - Search found 24 matching port(s).
+2026-05-27 12:43:59,023 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/1 - VLAN: 13, Bounce: True
+2026-05-27 12:43:59,023 - INFO - Initiating Pre-Change Backup for 192.168.0.7.
+2026-05-27 12:43:59,035 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:02,730 - INFO - Authentication (password) successful!
+2026-05-27 12:44:05,015 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:08,255 - INFO - Authentication (password) successful!
+2026-05-27 12:44:09,848 - INFO - Configuration output for 192.168.0.7 port Fa0/1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/1
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:10,984 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/1.
+2026-05-27 12:44:10,995 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/2 - VLAN: 13, Bounce: True
+2026-05-27 12:44:11,008 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:14,416 - INFO - Authentication (password) successful!
+2026-05-27 12:44:15,992 - INFO - Configuration output for 192.168.0.7 port Fa0/2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/2
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:17,181 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/2.
+2026-05-27 12:44:17,193 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/3 - VLAN: 13, Bounce: True
+2026-05-27 12:44:17,208 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:20,605 - INFO - Authentication (password) successful!
+2026-05-27 12:44:22,195 - INFO - Configuration output for 192.168.0.7 port Fa0/3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/3
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:23,738 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/3.
+2026-05-27 12:44:23,763 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/4 - VLAN: 13, Bounce: True
+2026-05-27 12:44:23,787 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:27,134 - INFO - Authentication (password) successful!
+2026-05-27 12:44:28,867 - INFO - Configuration output for 192.168.0.7 port Fa0/4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/4
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:29,986 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/4.
+2026-05-27 12:44:29,998 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/5 - VLAN: 13, Bounce: True
+2026-05-27 12:44:30,017 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:33,414 - INFO - Authentication (password) successful!
+2026-05-27 12:44:35,198 - INFO - Configuration output for 192.168.0.7 port Fa0/5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/5
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:36,324 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/5.
+2026-05-27 12:44:36,337 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/6 - VLAN: 13, Bounce: True
+2026-05-27 12:44:36,356 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:39,579 - INFO - Authentication (password) successful!
+2026-05-27 12:44:41,256 - INFO - Configuration output for 192.168.0.7 port Fa0/6:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/6
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:42,420 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/6.
+2026-05-27 12:44:42,444 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/7 - VLAN: 13, Bounce: True
+2026-05-27 12:44:42,460 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:45,695 - INFO - Authentication (password) successful!
+2026-05-27 12:44:47,273 - INFO - Configuration output for 192.168.0.7 port Fa0/7:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/7
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:48,796 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/7.
+2026-05-27 12:44:48,809 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/8 - VLAN: 13, Bounce: True
+2026-05-27 12:44:48,822 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:52,364 - INFO - Authentication (password) successful!
+2026-05-27 12:44:54,242 - INFO - Configuration output for 192.168.0.7 port Fa0/8:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/8
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:44:55,426 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/8.
+2026-05-27 12:44:55,450 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/9 - VLAN: 13, Bounce: True
+2026-05-27 12:44:55,472 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:44:58,810 - INFO - Authentication (password) successful!
+2026-05-27 12:45:00,469 - INFO - Configuration output for 192.168.0.7 port Fa0/9:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/9
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:45:01,758 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/9.
+2026-05-27 12:45:01,784 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/10 - VLAN: 13, Bounce: True
+2026-05-27 12:45:01,801 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:04,999 - INFO - Authentication (password) successful!
+2026-05-27 12:45:06,681 - INFO - Configuration output for 192.168.0.7 port Fa0/10:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/10
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:45:07,819 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/10.
+2026-05-27 12:45:07,831 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/11 - VLAN: 13, Bounce: True
+2026-05-27 12:45:07,878 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:11,346 - INFO - Authentication (password) successful!
+2026-05-27 12:45:13,036 - INFO - Configuration output for 192.168.0.7 port Fa0/11:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/11
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:45:14,605 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/11.
+2026-05-27 12:45:14,629 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Fa0/12 - VLAN: 13, Bounce: True
+2026-05-27 12:45:14,648 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:18,419 - INFO - Authentication (password) successful!
+2026-05-27 12:45:20,033 - INFO - Configuration output for 192.168.0.7 port Fa0/12:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Fa0/12
+Switch-1(config-if)#switchport access vlan 13
+Switch-1(config-if)#description Printer
+Switch-1(config-if)#authentication event server dead action authorize vlan 13
+Switch-1(config-if)#shutdown
+Switch-1(config-if)#no shutdown
+Switch-1(config-if)#end
+Switch-1#
+2026-05-27 12:45:21,175 - INFO - Configuration applied and saved for 192.168.0.7 port Fa0/12.
+2026-05-27 12:45:21,188 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/1 - VLAN: 13, Bounce: True
+2026-05-27 12:45:21,189 - INFO - Initiating Pre-Change Backup for 192.168.0.8.
+2026-05-27 12:45:21,205 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:23,367 - INFO - Authentication (password) successful!
+2026-05-27 12:45:25,268 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:27,419 - INFO - Authentication (password) successful!
+2026-05-27 12:45:28,971 - INFO - Configuration output for 192.168.0.8 port Fa0/1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/1
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:29,831 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/1.
+2026-05-27 12:45:29,843 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/2 - VLAN: 13, Bounce: True
+2026-05-27 12:45:29,857 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:32,038 - INFO - Authentication (password) successful!
+2026-05-27 12:45:33,625 - INFO - Configuration output for 192.168.0.8 port Fa0/2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/2
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:35,384 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/2.
+2026-05-27 12:45:35,396 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/3 - VLAN: 13, Bounce: True
+2026-05-27 12:45:35,413 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:37,580 - INFO - Authentication (password) successful!
+2026-05-27 12:45:39,197 - INFO - Configuration output for 192.168.0.8 port Fa0/3:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/3
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:40,095 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/3.
+2026-05-27 12:45:40,106 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/4 - VLAN: 13, Bounce: True
+2026-05-27 12:45:40,123 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:42,462 - INFO - Authentication (password) successful!
+2026-05-27 12:45:43,994 - INFO - Configuration output for 192.168.0.8 port Fa0/4:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/4
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:44,889 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/4.
+2026-05-27 12:45:44,902 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/5 - VLAN: 13, Bounce: True
+2026-05-27 12:45:44,919 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:47,230 - INFO - Authentication (password) successful!
+2026-05-27 12:45:48,822 - INFO - Configuration output for 192.168.0.8 port Fa0/5:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/5
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:49,725 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/5.
+2026-05-27 12:45:49,738 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/6 - VLAN: 13, Bounce: True
+2026-05-27 12:45:49,755 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:51,953 - INFO - Authentication (password) successful!
+2026-05-27 12:45:53,545 - INFO - Configuration output for 192.168.0.8 port Fa0/6:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/6
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:54,431 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/6.
+2026-05-27 12:45:54,445 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/7 - VLAN: 13, Bounce: True
+2026-05-27 12:45:54,462 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:45:56,711 - INFO - Authentication (password) successful!
+2026-05-27 12:45:58,400 - INFO - Configuration output for 192.168.0.8 port Fa0/7:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/7
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:45:59,328 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/7.
+2026-05-27 12:45:59,365 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/8 - VLAN: 13, Bounce: True
+2026-05-27 12:45:59,382 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:46:01,669 - INFO - Authentication (password) successful!
+2026-05-27 12:46:03,138 - INFO - Configuration output for 192.168.0.8 port Fa0/8:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/8
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:46:04,784 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/8.
+2026-05-27 12:46:04,796 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/9 - VLAN: 13, Bounce: True
+2026-05-27 12:46:04,812 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:46:06,966 - INFO - Authentication (password) successful!
+2026-05-27 12:46:08,417 - INFO - Configuration output for 192.168.0.8 port Fa0/9:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/9
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:46:09,314 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/9.
+2026-05-27 12:46:09,326 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/10 - VLAN: 13, Bounce: True
+2026-05-27 12:46:09,359 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:46:11,740 - INFO - Authentication (password) successful!
+2026-05-27 12:46:13,199 - INFO - Configuration output for 192.168.0.8 port Fa0/10:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/10
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:46:14,098 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/10.
+2026-05-27 12:46:14,111 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/11 - VLAN: 13, Bounce: True
+2026-05-27 12:46:14,125 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:46:16,475 - INFO - Authentication (password) successful!
+2026-05-27 12:46:17,974 - INFO - Configuration output for 192.168.0.8 port Fa0/11:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/11
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:46:18,891 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/11.
+2026-05-27 12:46:18,917 - INFO - Applying configuration to Switch-2 (192.168.0.8) on port Fa0/12 - VLAN: 13, Bounce: True
+2026-05-27 12:46:18,932 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:46:21,414 - INFO - Authentication (password) successful!
+2026-05-27 12:46:22,896 - INFO - Configuration output for 192.168.0.8 port Fa0/12:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-2(config)#interface Fa0/12
+Switch-2(config-if)#switchport access vlan 13
+Switch-2(config-if)#description Printer
+Switch-2(config-if)#authentication event server dead action authorize vlan 13
+Switch-2(config-if)#shutdown
+Switch-2(config-if)#no shutdown
+Switch-2(config-if)#end
+Switch-2#
+2026-05-27 12:46:23,776 - INFO - Configuration applied and saved for 192.168.0.8 port Fa0/12.

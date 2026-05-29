@@ -1,0 +1,23 @@
+2026-05-29 10:57:19,741 - INFO - Starting port configuration script.
+2026-05-29 10:58:17,292 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:58:20,517 - INFO - Authentication (password) successful!
+2026-05-29 10:58:21,913 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:58:25,251 - INFO - Authentication (password) successful!
+2026-05-29 10:58:26,755 - INFO - Search found 1 matching port(s).
+2026-05-29 10:58:36,361 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port Gi0/2 - VLAN: 10, Bounce: False
+2026-05-29 10:58:36,361 - INFO - Initiating Pre-Change Backup for 192.168.0.7.
+2026-05-29 10:58:36,385 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:58:39,873 - INFO - Authentication (password) successful!
+2026-05-29 10:58:42,439 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:58:45,969 - INFO - Authentication (password) successful!
+2026-05-29 10:58:47,334 - WARNING - Port Gi0/2 on Switch-1 is labeled Trunk/Uplink. Prompting user for acknowledgment.
+2026-05-29 10:58:58,768 - INFO - Configuration output for 192.168.0.7 port Gi0/2:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface Gi0/2
+Switch-1(config-if)#switchport access vlan 10
+Switch-1(config-if)#description Management
+Switch-1(config-if)#authentication event server dead action authorize vlan 10
+Switch-1(config-if)#end
+Switch-1#
+2026-05-29 10:58:59,883 - INFO - Configuration applied and saved for 192.168.0.7 port Gi0/2.

@@ -1,0 +1,3 @@
+hostname,ip_address,serial,model,firmware_version,uptime,total_ports,total_available_ports,last_inventoried,site,location,role
+Switch-1,192.168.0.7,FOC1908Y130,WS-C2960C-12PC-L,15.2(7)E7,"5 days, 18 hours, 58 minutes",14,10,2026-05-27 10:31:58,Home,Home Lab,Access
+Switch-2,192.168.0.8,FOC1930W2Z3,WS-C2960C-12PC-L,15.0(2)SE5,"14 hours, 59 minutes",14,13,2026-05-27 10:31:58,Home,Home Lab,Access

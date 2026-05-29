@@ -1,0 +1,454 @@
+Building configuration...
+
+Current configuration : 13471 bytes
+!
+! Last configuration change at 19:18:15 UTC Sat Jan 7 2006 by jeff
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname Switch-1
+!
+boot-start-marker
+boot-end-marker
+!
+logging console critical
+enable secret 9 $9$mJEC.hOPg3QfU4$owZWYciHkBn.o/qJ.VtlFNB3IA3lo5yNLKwHC2oyPsI
+!
+username jeff privilege 15 secret 9 $9$gWT0q2J.NbBCJ4$A./jGCiw2JpHmjt2Mx1jhDNDgm5j4X0fRdDVP.Z00Ig
+aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+aaa session-id common
+system mtu routing 1500
+!
+!
+ip dhcp snooping vlan 1-100
+no ip dhcp snooping information option
+ip dhcp snooping
+ip domain-name algroe.lab
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2231144576
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2231144576
+ revocation-check none
+ rsakeypair TP-self-signed-2231144576
+!
+!
+crypto pki certificate chain TP-self-signed-2231144576
+ certificate self-signed 01
+  3082022B 30820194 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32323331 31343435 3736301E 170D3036 30313032 30303031 
+  30395A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 32333131 
+  34343537 3630819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  81008DE1 45D911D4 8F729A4A 783E2B41 06B88AAF 63AF3E75 3EC6A4D6 E65AFD3C 
+  37714D63 C84B7B08 CDD5B740 169AFD2C 51D99AEE 099E0BA9 F92C9488 1959BCF2 
+  65DE5A7D 42F16821 84F2BB37 32F2B089 EB33AFE5 5CF14862 3700857F 872D0499 
+  C2C53028 06A90C1F 75DCE9F9 FAD87D34 DAE6C1FE 0ABFF7F8 5FEE5FED D911C90C 
+  06D30203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 301F0603 
+  551D2304 18301680 14313B3A 2157ED80 3BFA35B4 91161923 08314390 B4301D06 
+  03551D0E 04160414 313B3A21 57ED803B FA35B491 16192308 314390B4 300D0609 
+  2A864886 F70D0101 05050003 81810058 7A7A40FF 2F385660 1AA53C44 CB27BCBD 
+  20E6ACCF BDE1780F E617B284 36750F33 021B3229 BE04BF4E C6A5A8A1 E2252F82 
+  8855D0D5 B2174164 B192086E 5F6BBB19 39CE6759 9C41A443 58FD501F 350326EB 
+  4C2824FF 90E6BBBE DD755DFB 9327199B CABB34E2 FA73C4B1 11141E41 12B4DB1A 
+  9719E587 8C9BC3A8 56B50DA3 B671BF
+  	quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/2
+ description Management
+ switchport access vlan 10
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 10
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/3
+ description PC
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/4
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/5
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/6
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/7
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/8
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/9
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/10
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/11
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ shutdown
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface FastEthernet0/12
+ switchport access vlan 12
+ switchport mode access
+ switchport nonegotiate
+ switchport port-security maximum 500
+ ip access-group PERMIT-ISE in
+ shutdown
+ authentication event fail action next-method
+ authentication event server dead action authorize vlan 12
+ authentication event server dead action authorize voice
+ authentication event server alive action reinitialize 
+ authentication host-mode multi-auth
+ authentication open
+ authentication order dot1x mab
+ authentication priority dot1x mab
+ authentication port-control auto
+ authentication periodic
+ authentication timer reauthenticate server
+ authentication violation restrict
+ mab
+ dot1x pae authenticator
+ dot1x timeout tx-period 5
+ dot1x max-reauth-req 1
+ spanning-tree portfast edge
+ spanning-tree bpduguard enable
+ spanning-tree guard root
+ ip dhcp snooping information option allow-untrusted
+!
+interface GigabitEthernet0/1
+ description Downlink
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ description Uplink
+ switchport access vlan 10
+ switchport mode access
+ switchport nonegotiate
+ ip dhcp snooping trust
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ description Managment
+ ip address 192.168.0.7 255.255.255.0
+!
+!
+ip http server
+ip http secure-server
+ip ssh version 2
+!
+!
+!
+!
+line con 0
+ logging synchronous
+line vty 0 4
+ transport input ssh
+line vty 5 15
+ transport input ssh
+!
+end

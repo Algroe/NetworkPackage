@@ -1,0 +1,6 @@
+2026-05-27 12:41:11,818 - INFO - Starting port configuration script.
+2026-05-27 12:41:20,574 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:41:23,817 - INFO - Authentication (password) successful!
+2026-05-27 12:41:25,291 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-27 12:41:27,633 - INFO - Authentication (password) successful!
+2026-05-27 12:41:28,844 - INFO - No matching ports found for search criteria '3' with value '12'.

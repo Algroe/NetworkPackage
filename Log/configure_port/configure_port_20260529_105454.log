@@ -1,0 +1,30 @@
+2026-05-29 10:55:00,522 - INFO - Starting port configuration script.
+2026-05-29 10:55:43,231 - INFO - Manual entry selected for Switch-1 (192.168.0.7) on port int G0/1.
+2026-05-29 10:55:57,471 - INFO - Applying configuration to Switch-1 (192.168.0.7) on port int G0/1 - VLAN: 10, Bounce: False
+2026-05-29 10:55:57,471 - INFO - Initiating Pre-Change Backup for 192.168.0.7.
+2026-05-29 10:55:57,550 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:56:00,779 - INFO - Authentication (password) successful!
+2026-05-29 10:56:03,107 - INFO - Connected (version 2.0, client Cisco-1.25)
+2026-05-29 10:56:06,592 - INFO - Authentication (password) successful!
+2026-05-29 10:56:08,328 - INFO - Configuration output for 192.168.0.7 port int G0/1:
+configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch-1(config)#interface int G0/1
+                           ^
+% Invalid input detected at '^' marker.
+
+Switch-1(config)#switchport access vlan 10
+                  ^
+% Invalid input detected at '^' marker.
+
+Switch-1(config)#description Management
+                   ^
+% Invalid input detected at '^' marker.
+
+Switch-1(config)#authentication event server dead action authorize vlan 10
+                                ^
+% Invalid input detected at '^' marker.
+
+Switch-1(config)#end
+Switch-1#
+2026-05-29 10:56:09,611 - INFO - Configuration applied and saved for 192.168.0.7 port int G0/1.

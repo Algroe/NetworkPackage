@@ -1,0 +1,30 @@
+[
+    {
+        "hostname": "Switch-1",
+        "ip_address": "192.168.0.7",
+        "serial": "FOC1908Y130",
+        "model": "WS-C2960C-12PC-L",
+        "firmware_version": "15.2(7)E7",
+        "uptime": "1 hour, 50 minutes",
+        "total_ports": 14,
+        "total_available_ports": 12,
+        "last_inventoried": "2026-05-27 14:21:01",
+        "site": "Home",
+        "location": "Home Lab",
+        "role": "Access"
+    },
+    {
+        "hostname": "Switch-2",
+        "ip_address": "192.168.0.8",
+        "serial": "FOC1930W2Z3",
+        "model": "WS-C2960C-12PC-L",
+        "firmware_version": "15.2(7)E7",
+        "uptime": "17 minutes",
+        "total_ports": 14,
+        "total_available_ports": 12,
+        "last_inventoried": "2026-05-27 14:21:01",
+        "site": "Home",
+        "location": "Home Lab",
+        "role": "Access"
+    }
+]
