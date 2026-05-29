@@ -4,6 +4,7 @@ import ipaddress # added to calculate ranges from CIDR notation
 from datetime import datetime  # <--- Added for timestamping
 from netmiko import ConnectHandler
 import argparse
+import re
 
 def get_ip_list():
         choice = input("Enter IPs by (L)ist or (R)ange? [L]: ").strip().upper()
@@ -74,6 +75,28 @@ def get_switch_data():
                     
                     uptime = data.get("uptime", "Unknown")
                     
+                    # Check if model is Catalyst 9k or above to get licensing
+                    model_str = str(model)
+                    is_9k_or_above = model_str.startswith("C9")
+                    if not is_9k_or_above:
+                        match = re.search(r'\b(?:WS-C|C)(\d{4})', model_str)
+                        if match and int(match.group(1)) >= 9000:
+                            is_9k_or_above = True
+
+                    licensing_version = "N/A"
+                    if is_9k_or_above:
+                        try:
+                            lic_output = net_connect.send_command("show version | include License Level")
+                            lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                            if lic_match:
+                                licensing_version = lic_match.group(1).strip()
+                            elif lic_output.strip():
+                                licensing_version = lic_output.strip().split('\n')[0]
+                            else:
+                                licensing_version = "Unknown"
+                        except Exception as e:
+                            print(f"  [!] Could not fetch licensing for {ip}: {e}")
+
                     # Grab total number of ports and available ports
                     total_ports_count = 0
                     total_available_ports_count = 0
@@ -95,6 +118,8 @@ def get_switch_data():
                     print(f"  Firmware: {version}")
                     print(f"  Is Stack: {is_stack} (Count: {stack_count})")
                     print(f"  Serials:  {', '.join(serial_list)}")
+                    if is_9k_or_above:
+                        print(f"  Licensing: {licensing_version}")
                     print(f"  Total Ports: {total_ports_count}")
                     print(f"  Total Available Ports: {total_available_ports_count}")
                     print("-" * 30)
@@ -131,6 +156,7 @@ def get_switch_data():
                         "model": model,
                         "firmware_version": version,
                         "uptime": uptime,
+                        "licensing_version": licensing_version,
                         "total_ports": total_ports_count,
                         "total_available_ports": total_available_ports_count,
                         "last_inventoried": scan_time,
@@ -205,6 +231,28 @@ def update_inventory(filename="switch_inventory.json"):
                     device['is_stack'] = len(serial_list) > 1
                     device['stack_count'] = len(serial_list)
                     device['serial'] = serial_list
+
+                    current_model = data.get("hardware", device.get("model", "Unknown"))
+                    if isinstance(current_model, list): current_model = current_model[0]
+                    device['model'] = current_model
+
+                    model_str = str(current_model)
+                    is_9k_or_above = model_str.startswith("C9")
+                    if not is_9k_or_above:
+                        match = re.search(r'\b(?:WS-C|C)(\d{4})', model_str)
+                        if match and int(match.group(1)) >= 9000:
+                            is_9k_or_above = True
+
+                    if is_9k_or_above:
+                        try:
+                            lic_output = net_connect.send_command("show version | include License Level")
+                            lic_match = re.search(r"License Level:\s*(.+)", lic_output, re.IGNORECASE)
+                            if lic_match:
+                                device['licensing_version'] = lic_match.group(1).strip()
+                            elif lic_output.strip():
+                                device['licensing_version'] = lic_output.strip().split('\n')[0]
+                        except Exception as e:
+                            print(f"  [!] Could not fetch licensing for {ip}: {e}")
                 
                 total_ports_count = 0
                 total_available_ports_count = 0
